@@ -27,7 +27,6 @@ env:
 
 # Jobs define the actions that take place when code is pushed to the master branch
 jobs:
-
   build-and-publish-docker-image:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
@@ -40,7 +39,7 @@ jobs:
       with:
         username: ${{ secrets.ACR_USERNAME }}
         password: ${{ secrets.ACR_PASSWORD }}
-        path: ${{ env.dockerfilePath  }}
+        path: ${{ env.dockerfilePath }}
         dockerfile: '${{ env.dockerfilePath }}/Dockerfile'
         registry: ${{ env.containerRegistry }}
         repository: ${{ env.imageRepository }}
